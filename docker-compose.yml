@@ -7,4 +7,5 @@ services:
     command:
       - /bin/sh
       - -c
-      - deno eval 'import {transform} from "npm:@swc/core@1.3.101";console.log(await transform("if(true){}"));'
+      - |
+        deno eval 'import {transform} from "npm:@swc/core@1.3.101";console.log(await transform("if(true){}"));'
