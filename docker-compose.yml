@@ -4,4 +4,7 @@ services:
     image: denoland/deno:alpine
     volumes:
       - ./:/app
-    command: ["run", "app/example.ts"]
+    command:
+      - /bin/sh
+      - -c
+      - deno eval 'import {transform} from "npm:@swc/core@1.3.101";console.log(await transform("if(true){}"));'
